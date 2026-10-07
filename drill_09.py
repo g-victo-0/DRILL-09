@@ -10,6 +10,10 @@ FRAME_COUNT = 8
 running = True
 x = CANVAS_WIDTH // 2
 y = CANVAS_HEIGHT // 2
+left_pressed = False
+right_pressed = False
+up_pressed = False
+down_pressed = False
 
 
 def main():

@@ -100,6 +100,13 @@ def main():
     open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
     background = load_image('TUK_GROUND.png')
     character = load_image('animation_sheet.png')
+
+    while running:
+        handle_events()
+        update_character()
+        draw_world(background, character)
+        delay(0.03)
+
     close_canvas()
 
 

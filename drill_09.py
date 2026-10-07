@@ -13,6 +13,8 @@ x = CANVAS_WIDTH // 2
 y = CANVAS_HEIGHT // 2
 facing = 'right'
 moving = False
+frame = 0
+frame_tick = 0
 left_pressed = False
 right_pressed = False
 up_pressed = False
@@ -49,7 +51,7 @@ def handle_events():
 
 
 def update_character():
-    global x, y, facing, moving
+    global x, y, facing, moving, frame, frame_tick
 
     dx = int(right_pressed) - int(left_pressed)
     dy = int(up_pressed) - int(down_pressed)
@@ -67,6 +69,10 @@ def update_character():
     half_height = FRAME_HEIGHT // 2
     x = max(half_width, min(CANVAS_WIDTH - half_width, x))
     y = max(half_height, min(CANVAS_HEIGHT - half_height, y))
+
+    frame_tick += 1
+    if frame_tick % 3 == 0:
+        frame = (frame + 1) % FRAME_COUNT
 
 
 def main():

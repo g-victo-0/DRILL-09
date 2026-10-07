@@ -11,6 +11,7 @@ MOVE_SPEED = 6
 running = True
 x = CANVAS_WIDTH // 2
 y = CANVAS_HEIGHT // 2
+facing = 'right'
 left_pressed = False
 right_pressed = False
 up_pressed = False
@@ -47,16 +48,18 @@ def handle_events():
 
 
 def update_character():
-    global x, y
+    global x, y, facing
 
-    if left_pressed:
-        x -= MOVE_SPEED
-    if right_pressed:
-        x += MOVE_SPEED
-    if up_pressed:
-        y += MOVE_SPEED
-    if down_pressed:
-        y -= MOVE_SPEED
+    dx = int(right_pressed) - int(left_pressed)
+    dy = int(up_pressed) - int(down_pressed)
+
+    x += dx * MOVE_SPEED
+    y += dy * MOVE_SPEED
+
+    if dx < 0:
+        facing = 'left'
+    elif dx > 0:
+        facing = 'right'
 
 
 def main():

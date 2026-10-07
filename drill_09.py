@@ -61,6 +61,11 @@ def update_character():
     elif dx > 0:
         facing = 'right'
 
+    half_width = FRAME_WIDTH // 2
+    half_height = FRAME_HEIGHT // 2
+    x = max(half_width, min(CANVAS_WIDTH - half_width, x))
+    y = max(half_height, min(CANVAS_HEIGHT - half_height, y))
+
 
 def main():
     open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)

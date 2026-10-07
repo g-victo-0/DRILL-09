@@ -86,6 +86,16 @@ def get_sprite_y():
     return 200
 
 
+def draw_world(background, character):
+    clear_canvas()
+    background.draw(CANVAS_WIDTH // 2, CANVAS_HEIGHT // 2)
+    character.clip_draw(
+        frame * FRAME_WIDTH, get_sprite_y(),
+        FRAME_WIDTH, FRAME_HEIGHT, x, y
+    )
+    update_canvas()
+
+
 def main():
     open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
     background = load_image('TUK_GROUND.png')

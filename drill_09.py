@@ -75,6 +75,17 @@ def update_character():
         frame = (frame + 1) % FRAME_COUNT
 
 
+def get_sprite_y():
+    if moving:
+        if facing == 'right':
+            return 100
+        return 0
+
+    if facing == 'right':
+        return 300
+    return 200
+
+
 def main():
     open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
     background = load_image('TUK_GROUND.png')

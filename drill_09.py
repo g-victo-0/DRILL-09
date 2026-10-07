@@ -17,7 +17,7 @@ down_pressed = False
 
 
 def handle_events():
-    global running, left_pressed, right_pressed
+    global running, left_pressed, right_pressed, up_pressed, down_pressed
 
     events = get_events()
     for event in events:
@@ -30,6 +30,10 @@ def handle_events():
                 left_pressed = True
             elif event.key == SDLK_RIGHT:
                 right_pressed = True
+            elif event.key == SDLK_UP:
+                up_pressed = True
+            elif event.key == SDLK_DOWN:
+                down_pressed = True
 
 
 def main():

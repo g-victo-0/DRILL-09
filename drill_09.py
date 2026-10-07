@@ -47,12 +47,16 @@ def handle_events():
 
 
 def update_character():
-    global x
+    global x, y
 
     if left_pressed:
         x -= MOVE_SPEED
     if right_pressed:
         x += MOVE_SPEED
+    if up_pressed:
+        y += MOVE_SPEED
+    if down_pressed:
+        y -= MOVE_SPEED
 
 
 def main():

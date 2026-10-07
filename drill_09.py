@@ -6,6 +6,7 @@ CANVAS_HEIGHT = 1024
 FRAME_WIDTH = 100
 FRAME_HEIGHT = 100
 FRAME_COUNT = 8
+MOVE_SPEED = 6
 
 running = True
 x = CANVAS_WIDTH // 2
@@ -43,6 +44,15 @@ def handle_events():
                 up_pressed = False
             elif event.key == SDLK_DOWN:
                 down_pressed = False
+
+
+def update_character():
+    global x
+
+    if left_pressed:
+        x -= MOVE_SPEED
+    if right_pressed:
+        x += MOVE_SPEED
 
 
 def main():

@@ -34,6 +34,15 @@ def handle_events():
                 up_pressed = True
             elif event.key == SDLK_DOWN:
                 down_pressed = True
+        elif event.type == SDL_KEYUP:
+            if event.key == SDLK_LEFT:
+                left_pressed = False
+            elif event.key == SDLK_RIGHT:
+                right_pressed = False
+            elif event.key == SDLK_UP:
+                up_pressed = False
+            elif event.key == SDLK_DOWN:
+                down_pressed = False
 
 
 def main():

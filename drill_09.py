@@ -7,6 +7,8 @@ FRAME_WIDTH = 100
 FRAME_HEIGHT = 100
 FRAME_COUNT = 8
 
+running = True
+
 
 def main():
     open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)

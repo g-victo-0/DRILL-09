@@ -17,7 +17,7 @@ down_pressed = False
 
 
 def handle_events():
-    global running
+    global running, left_pressed, right_pressed
 
     events = get_events()
     for event in events:
@@ -25,6 +25,11 @@ def handle_events():
             running = False
         elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
             running = False
+        elif event.type == SDL_KEYDOWN:
+            if event.key == SDLK_LEFT:
+                left_pressed = True
+            elif event.key == SDLK_RIGHT:
+                right_pressed = True
 
 
 def main():

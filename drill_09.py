@@ -10,6 +10,7 @@ FRAME_COUNT = 8
 
 def main():
     open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
+    background = load_image('TUK_GROUND.png')
     close_canvas()
 
 

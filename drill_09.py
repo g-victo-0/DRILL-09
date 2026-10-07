@@ -8,6 +8,8 @@ FRAME_HEIGHT = 100
 FRAME_COUNT = 8
 
 running = True
+x = CANVAS_WIDTH // 2
+y = CANVAS_HEIGHT // 2
 
 
 def main():
